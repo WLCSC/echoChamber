@@ -1,0 +1,68 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+body {
+  background-color: #222;
+  color: #ddd;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.inputs {
+    margin: 10px;
+}
+
+label {
+    display: block;
+  color: #999;
+  line-height: 24px;
+  margin-bottom: 2px;
+}
+
+.buttonbox {
+    padding: 10px;
+    background-color: #282828;
+    border: thin solid #333;
+    border-radius: 8px;
+    width: 25%;
+    margin: auto;
+}
+
+.count {
+    padding: 10px;
+    background-color: #282828;
+    border: thin solid #333;
+    border-radius: 8px;
+    width: 15%;
+    margin: auto;
+    margin-top: 8px;
+}
+
+button {
+    background-color: #bbb;
+    border: thin solid black;
+    padding: 4px 16px;
+    margin-left: 8px;
+    margin-right: 8px;
+    color: black;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #8f8;
+}
+
+button:active {
+    background-color: #6e6;
+}
+
+#logo {
+    width: 256px;
+    height: 256px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+textarea {
+    width: 40%;
+
+}
