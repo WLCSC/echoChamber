@@ -16,6 +16,7 @@
         <div class="buttonbox">
             <button onClick="postCtrl('play');" id="playButton">Play</button> 
             <button onClick="postCtrl('pause');" id="pauseButton">Pause</button> 
+            <p id="timebar"><span id="currentTime"></span>/<span id="endTime"></span></p>
         </div>
 
         <div class="inputs">
@@ -46,41 +47,56 @@
         </div>
 
         <script type="text/javascript">
+            var playing = false;
             function postData() {
                 $.post(' <%= url 'post' %>', { play: $('#play').val(), title: $('#title').val(), desc: $('#desc').val() });
             }
 
-            function postCtrl(x) {
-                $.post(' <%= url 'post' %>', {ctrl: x});
-            }
+function postCtrl(x) {
+    $.post(' <%= url 'post' %>', {ctrl: x});
+}
 
-            function play() {
-                $('#target')[0].play();
-                $('#logo').attr('src', "<%= url 'logo-on.png' %>");
-            }
+function play() {
+    $('#target')[0].play();
+    $('#logo').attr('src', "<%= url 'logo-on.png' %>");
+    playing = true;
+}
 
-            function pause() {
-                $('#target')[0].pause();
-                $('#logo').attr('src', "<%= url 'logo-off.png' %>");
-            }
+function pause() {
+    $('#target')[0].pause();
+    $('#logo').attr('src', "<%= url 'logo-off.png' %>");
+    playing = false;
+}
 
-            var es = new EventSource('<%= url 'stream' %>');
-            es.onmessage = function(e) {
-                dx = JSON.parse(e.data);
-                if(dx.ctrl) {
-                    switch(dx.ctrl) {
-                        case 'play':
-                            play();
-                            break;
-                        case 'pause':
-                            pause();
-                            break;
-                    }
-                }else{
+var es = new EventSource('<%= url 'stream' %>');
+es.onmessage = function(e) {
+    dx = JSON.parse(e.data);
+    if(dx.ctrl) {
+        switch(dx.ctrl) {
+            case 'play':
+                play();
+                break;
+            case 'pause':
                 pause();
-                $("#target").attr('src', "<%= @filehost %>" + dx.play);
-                }
-            }
+                break;
+        }
+    }else{
+        pause();
+        $("#target").attr('src', "<%= @filehost %>" + dx.play);
+    }
+}
+
+$("#target").on("loadedmetadata", function() {
+        $("#endTime").html($("#target")[0].seekable.end(0));
+});
+
+function updateTime() {
+    if(playing) { 
+        $("#currentTime").html($("#target")[0].currentTime);
+    }
+}
+
+setInterval(updateTime, 250);
 
 </script>
   </body>
