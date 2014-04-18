@@ -19,20 +19,25 @@
                 <div id="description">
                     <%= @description %>
                 </div>
-        <script>
+                <script>
+                    var debugEvent;
             function play() {
                 $('#target')[0].play();
                 $('#logo').attr('src', "<%= url 'logo-on.png' %>");
+                console.info("Playing");
             }
 
             function pause() {
                 $('#target')[0].pause();
                 $('#logo').attr('src', "<%= url 'logo-off.png' %>");
+                console.info("Pausing");
             }
 
             var es = new EventSource('<%= url 'stream' %>');
             es.onmessage = function(e) {
                 dx = JSON.parse(e.data);
+                console.debug(dx);
+                console.log($('#target')[0].currentTime);
                 if(dx.ctrl) {
                     switch(dx.ctrl) {
                         case 'play':
@@ -40,6 +45,11 @@
                             break;
                         case 'pause':
                             pause();
+                            break;
+                        case 'heartbeat':
+                            break;
+                        case 'jump':
+                            $('#target')[0].currentTime = dx.jump;
                             break;
                     }
                     }else{
@@ -51,6 +61,12 @@
                 $('#description').html(dx.desc)
                 }
             }
+
+            es.onerror = function(e) {
+                alert("EventSource failed.  Please notify the in-charge-y people.");
+                $('#description').html("<pre>" + e + "</pre>");
+                debugEvent = e;
+            };
 
             function finishLoad() {
                 $('#spinner').hide();

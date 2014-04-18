@@ -105,6 +105,10 @@ class EchoChamber < Sinatra::Base
         if params[:ctrl]
             settings.connections.each {|out| out << %Q^data: {"ctrl": "#{params[:ctrl]}"}\n\n^}
         end
+        
+        if params[:ctrl] && params[:jump]
+            settings.connections.each {|out| out << %Q^data: {"ctrl": "#{params[:ctrl]}", "jump": #{params[:jump]}}\n\n^}
+        end
         204
     end
 end
