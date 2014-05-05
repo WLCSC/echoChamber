@@ -17,7 +17,7 @@ class EchoChamber < Sinatra::Base
     def protected!
         unless authorized?
             response['WWW-Authenticate'] = %(Basic realm="Control Interface")
-            throw(:halt, [401, "We need your login name (#{settings.username}) & password (#{settings.password}) to get to the control interface.\n"])
+            throw(:halt, [401, "We need your login name & password to get to the control interface.\n"])
         end
     end
 
