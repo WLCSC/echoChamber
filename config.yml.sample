@@ -1,2 +1,4 @@
 username: admin
 password: admin
+port: 4567
+label: "EchoChamber"
