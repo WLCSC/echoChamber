@@ -47,3 +47,7 @@ gem "paperclip", "~> 4.3"
 
 # Faye will be used to magically sync statuses.
 gem "faye-rails", "~> 2.0"
+
+# LDAP gems
+gem "activeldap"
+gem "net-ldap"
