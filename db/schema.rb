@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150728145904) do
+ActiveRecord::Schema.define(version: 20150728150853) do
+
+  create_table "rooms", force: :cascade do |t|
+    t.integer  "last_file_id_id"
+    t.string   "password"
+    t.text     "comment"
+    t.string   "user_sid"
+    t.string   "name"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "rooms", ["last_file_id_id"], name: "index_rooms_on_last_file_id_id"
 
   create_table "sounds", force: :cascade do |t|
     t.datetime "created_at",        null: false

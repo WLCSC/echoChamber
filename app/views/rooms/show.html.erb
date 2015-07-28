@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Last file:</strong>
+  <%= @room.last_file_id %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @room.password %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @room.comment %>
+</p>
+
+<p>
+  <strong>User sid:</strong>
+  <%= @room.user_sid %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @room.name %>
+</p>
+
+<%= link_to 'Edit', edit_room_path(@room) %> |
+<%= link_to 'Back', rooms_path %>

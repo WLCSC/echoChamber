@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  last_file_id_id: 
+  password: MyString
+  comment: MyText
+  user_sid: MyString
+  name: MyString
+
+two:
+  last_file_id_id: 
+  password: MyString
+  comment: MyText
+  user_sid: MyString
+  name: MyString
