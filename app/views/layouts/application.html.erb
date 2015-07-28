@@ -8,6 +8,10 @@
 	</head>
 
 	<body>
+		<% if current_user %>
+			You are logged in as <%= current_user.nice_name %>.
+		<% end %>
+
 		<% flash.each do |k, v| %>
 			<%= content_tag :div, v, class: "flash #{k}" %>
 		<% end %>
