@@ -2,6 +2,7 @@ class DummyUser
 	def name
 		"dummy"
 	end
+	alias_method :nice_name, :name
 
 	def sid
 		"dummy"
