@@ -7,7 +7,7 @@ A program for playing sounds in school.
 ```bash
 gem install bundler # if Bundler is not already installed
 bundle install
-cp config/ldap.yml.sample
+cp config/ldap.yml.sample config/ldap.yml
 rake db:migrate
 ```
 
