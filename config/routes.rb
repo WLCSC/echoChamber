@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 	get "session/destroy", as: :logout
 
 	resources :rooms
-	resources :rooms
 	resources :sounds
+
 	# The priority is based upon order of creation: first created -> highest priority.
 	# See how all your routes lay out with "rake routes".
 
