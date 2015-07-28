@@ -10,26 +10,25 @@
 			</ul>
 		</div>
 	<% end %>
-
-	<div class="field">
-		<%= f.label :last_sound_id %><br>
-		<%= f.text_field :last_sound_id %>
+  <div class="field">
+		<%= f.label :name %><br>
+		<%= f.text_field :name %>
 	</div>
-	<div class="field">
+  <div class="field">
+		<%= f.label :user_sid %><br>
+		<%= f.text_field :user_sid %>
+	</div>
+  <div class="field">
 		<%= f.label :password %><br>
 		<%= f.text_field :password %>
 	</div>
-	<div class="field">
+  <div class="field">
 		<%= f.label :comment %><br>
 		<%= f.text_area :comment %>
 	</div>
 	<div class="field">
-		<%= f.label :user_sid %><br>
-		<%= f.text_field :user_sid %>
-	</div>
-	<div class="field">
-		<%= f.label :name %><br>
-		<%= f.text_field :name %>
+		<%= f.label :last_sound_id %><br>
+		<%= f.text_field :last_sound_id %>
 	</div>
 	<div class="actions">
 		<%= f.submit %>
