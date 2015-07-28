@@ -3,5 +3,5 @@
 <h1>Rooms</h1>
 
 <% @rooms.each do |room| %>
-  <div id="roomy_buttons"><%= link_to room.name, room, class: "btn btn-primary" %></div
+  <div id="roomy_buttons"><%= button_to room.name, room %></div
 <% end %>
