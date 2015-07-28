@@ -1,5 +1,8 @@
 class SessionController < ApplicationController
 	def new
+		if APP_CONFIG[:ignore_ldap]
+			redirect_to rooms_path
+		end
 	end
 
 	def create
