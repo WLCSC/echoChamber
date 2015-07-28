@@ -1,0 +1,11 @@
+development:
+  admin_group: Intranet Admins
+  ignore_ldap: true
+
+test:
+  admin_group: Intranet Admins
+  ignore_ldap: true
+
+producation:
+  admin_group: Intranet Admins
+  ignore_ldap: false
