@@ -1,5 +1,5 @@
 class Group < ActiveLdap::Base
-	ldap_mapping dn_attribute: 'name', classes: ['top', 'group'], prefix: '', scope: :sub
+	ldap_mapping dn_attribute: "name", classes: ["top", "group"], prefix: "", scope: :sub
 
 	def nice_name
 		name

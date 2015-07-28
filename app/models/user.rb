@@ -1,13 +1,13 @@
 require "set"
 
 class User < ActiveLdap::Base
-	ldap_mapping dn_attribute: 'sAMAccountName', classes: ['top', 'organizationalPerson', 'person', 'user'], excluded_classes: ['computer'], prefix: '', scope: :sub
+	ldap_mapping dn_attribute: "sAMAccountName", classes: ["top", "organizationalPerson", "person", "user"], excluded_classes: ["computer"], prefix: "", scope: :sub
 
 	def nice_name
 		begin
-			givenName + ' ' + sn
+			givenName + " " + sn
 		rescue
-			'ERR'
+			"ERR"
 		end
 	end
 
