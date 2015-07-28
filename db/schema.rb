@@ -11,19 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150728150853) do
+ActiveRecord::Schema.define(version: 20150728152525) do
 
   create_table "rooms", force: :cascade do |t|
-    t.integer  "last_file_id_id"
     t.string   "password"
     t.text     "comment"
     t.string   "user_sid"
     t.string   "name"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "last_file_id"
   end
 
-  add_index "rooms", ["last_file_id_id"], name: "index_rooms_on_last_file_id_id"
+  add_index "rooms", ["last_file_id"], name: "index_rooms_on_last_file_id"
 
   create_table "sounds", force: :cascade do |t|
     t.datetime "created_at",        null: false
@@ -32,6 +32,9 @@ ActiveRecord::Schema.define(version: 20150728150853) do
     t.string   "data_content_type"
     t.integer  "data_file_size"
     t.datetime "data_updated_at"
+    t.integer  "room_id"
   end
+
+  add_index "sounds", ["room_id"], name: "index_sounds_on_room_id"
 
 end
