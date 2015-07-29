@@ -12,7 +12,7 @@ class User < ActiveLdap::Base
 	end
 
 	def membership
-		@membership ||= Group.find(:all, filter: {member: dn})
+		@membership ||= Group.find(:all, filter: { member: dn })
 	end
 
 	def groups(force=false)
@@ -21,7 +21,7 @@ class User < ActiveLdap::Base
 			list =  membership
 			while !list.empty?
 				x = list.pop
-				Group.find(:all, filter: {member: x.dn}).each do |m|
+				Group.find(:all, filter: { member: x.dn }).each do |m|
 					y = Group.find(:first, m.sAMAccountName)
 					list << y if y
 				end
