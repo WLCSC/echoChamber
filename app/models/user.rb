@@ -11,6 +11,10 @@ class User < ActiveLdap::Base
 		end
 	end
 
+	def sid
+		sAMAccountName
+	end
+
 	def membership
 		@membership ||= Group.find(:all, filter: { member: dn })
 	end
