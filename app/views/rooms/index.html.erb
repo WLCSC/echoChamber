@@ -11,7 +11,8 @@
 		<% end %>
 	</p>
 <% end %>
-<% if current_admin %>
+
+<% if current_admin || current_teacher %>
 	<%= link_to new_room_path do %>
 		<button class="lighter_button">New Room</button>
 	<% end %>
