@@ -10,7 +10,7 @@
 	<body>
 		<div class="log_in_header">
 			<% if current_user %>
-				You are logged in as <em><%= current_user.nice_name %></em>.
+				You are logged in as <i><%= current_user.nice_name %></i>.
 			<% end %>
 		</div>
 		<% flash.each do |k, v| %>
