@@ -1,6 +1,6 @@
 <%= image_tag "logo", size: "150x150" %>
 
-<% if current_user.admin? %>
+<% if current_teacher || current_admin %>
 	<%= render "teacher" %>
 <% else %>
 	<%= render "student" %>
