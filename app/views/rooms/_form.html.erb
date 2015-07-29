@@ -17,8 +17,12 @@
 	</div>
 
 	<div class="field">
-		<%= f.label :user_sid, "Teacher of this room (sid)" %><br>
-		<%= f.text_field :user_sid %>
+		<% if current_admin %>
+			<%= f.label :user_sid, "Teacher of this room (sid)" %><br>
+			<%= f.text_field :user_sid %>
+		<% else %>
+			<%= f.hidden_field :user_sid, :username %>
+		<% end %>
 	</div>
 
 	<div class="field">
@@ -30,8 +34,6 @@
 		<%= f.label :comment, "Extra information about the room" %><br>
 		<%= f.text_area :comment %>
 	</div>
-
-	Sound clips can be uploaded after you create the room.
 
 	<div class="actions">
 		<%= f.submit nil, class: "button lighter_button" %>
