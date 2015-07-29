@@ -51,3 +51,6 @@ gem "faye-rails", "~> 2.0"
 # LDAP gems
 gem "activeldap"
 gem "net-ldap"
+
+# Faye needs thin in order to actually work.
+gem "thin", "~> 1.6"
