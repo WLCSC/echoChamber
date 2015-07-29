@@ -4,6 +4,6 @@
 
 <% @rooms.each do |room| %>
 	<div id="room_button"><p>
-		<%= link_to room.name, room %>
+		<%= button_to room.name, room, method: :get %>
 	</p></div>
 <% end %>
