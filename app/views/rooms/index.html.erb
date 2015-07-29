@@ -3,7 +3,9 @@
 <h1>Rooms</h1>
 
 <% @rooms.each do |room| %>
-	<div id="room_button"><p>
-		<%= button_to room.name, room, method: :get %>
-	</p></div>
+	<p>
+		<%= link_to room do %>
+			<button><%= room.name %></button>
+		<% end %>
+	</p>
 <% end %>
