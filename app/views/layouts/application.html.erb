@@ -8,10 +8,11 @@
 	</head>
 
 	<body>
+		<div id="logging_in">
 		<% if current_user %>
-			You are logged in as <%= current_user.nice_name %>.
+			You are logged in as <em><%= current_user.nice_name %></em>.
 		<% end %>
-
+	</div>
 		<% flash.each do |k, v| %>
 			<%= content_tag :div, v, class: "flash #{k}" %>
 		<% end %>

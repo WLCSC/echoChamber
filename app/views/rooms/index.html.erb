@@ -3,6 +3,6 @@
 <h1>Rooms</h1>
 
 <% @rooms.each do |room| %>
-  <div id="roomy_buttons"><%= button_to room.name, room %></div>
+  <div id="roomy_buttons"><%= link_to room.name, room %></div>
   <br>
 <% end %>

@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+#logging_in {
+  text-align: right;
+}
