@@ -15,7 +15,11 @@ class ApplicationController < ActionController::Base
 		@current_admin ||= (current_user && current_user.admin?)
 	end
 
-	helper_method :current_user, :current_admin
+	def current_teacher
+		@current_teacher ||= (current_user && current_user.teacher?)
+	end
+
+	helper_method :current_user, :current_admin, :current_teacher
 
 	private
 	def check_for_user

@@ -37,6 +37,10 @@ class User < ActiveLdap::Base
 		groups.include?(Group.find(:first, APP_CONFIG[:admin_group]))
 	end
 
+	def teacher?
+		groups.include?(Group.find(:first, APP_CONFIG[:teacher_group]))
+	end
+
 	def User.authenticate(sid, password)
 		user = User.find(sid)
 		user.bind(password)

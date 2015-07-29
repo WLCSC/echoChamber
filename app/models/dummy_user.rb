@@ -11,4 +11,8 @@ class DummyUser
 	def admin?
 		APP_CONFIG[:ignore_ldap]
 	end
+
+	def teacher?
+		APP_CONFIG[:ignore_ldap]
+	end
 end

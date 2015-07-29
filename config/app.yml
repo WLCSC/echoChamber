@@ -1,11 +1,14 @@
 development:
   admin_group: Intranet Admins
+  teacher_group: Teachers
   ignore_ldap: true
 
 test:
   admin_group: Intranet Admins
+  teacher_group: Teachers
   ignore_ldap: true
 
 producation:
   admin_group: Intranet Admins
+  teacher_group: Teachers
   ignore_ldap: false
