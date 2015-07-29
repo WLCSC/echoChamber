@@ -11,3 +11,8 @@
 		<% end %>
 	</p>
 <% end %>
+<% if  current_admin %>
+	<%= link_to new_room_path do %>
+		<button>New Room</button>
+	<% end %>
+<% end %>
