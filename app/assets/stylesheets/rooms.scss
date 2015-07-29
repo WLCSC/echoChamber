@@ -49,6 +49,14 @@ label {
   background-color: #FFFFFF;
 }
 
+.field_with_errors {
+  margin: auto;
+}
+
+#error_explanation {
+  margin: auto;
+  color: black;
+}
 
 button {
     background-color: #bbb;
