@@ -14,6 +14,35 @@
  *= require_self
  */
 
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,700");
+
 .log_in_header {
 	text-align: right;
+}
+
+body {
+	background-color: #222;
+	color: #ddd;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+}
+
+#logo {
+    width: 256px;
+    height: 256px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+#spinner {
+    position: absolute;
+    text-align: center;
+    font-variant: small-caps;
+    top: 148px;
+    font-color: #afa;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-size: 225%;
+    font-weight: bold;
 }
