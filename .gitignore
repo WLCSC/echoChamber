@@ -18,3 +18,4 @@
 
 # Special LDAP configuration.
 config/ldap.yml
+public/system

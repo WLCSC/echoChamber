@@ -1,0 +1,22 @@
+<div class="buttonbox">
+	<h4>Upload sounds</h4>
+
+	<%= form_for(Sound.new) do |f| %>
+		<div class="field">
+			<%= f.file_field :data %>
+		</div>
+		<%= f.hidden_field :room_id, value: @room.id %>
+
+		<div class="actions">
+			<%= f.submit %>
+		</div>
+	<% end %>
+</div>
+
+<div class="buttonbox">
+	<h4>Sound file list</h4>
+
+	<% @sounds.each do |s| %>
+		<%= s %>
+	<% end %>
+</div>

@@ -28,7 +28,7 @@ class SoundsController < ApplicationController
 
 		respond_to do |format|
 			if @sound.save
-				format.html { redirect_to @sound, notice: "Sound was successfully created." }
+				format.html { redirect_to room_path(@sound.room) }
 				format.json { render :show, status: :created, location: @sound }
 			else
 				format.html { render :new }
@@ -69,6 +69,6 @@ class SoundsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sound_params
-		params[:sound]
+		params[:sound].permit(:data, :room_id)
     end
 end
