@@ -17,11 +17,11 @@
 	</div>
 
 	<div class="field">
-		<% if current_admin %>
+		<% if current_teacher %>
 			<%= f.label :user_sid, "Teacher of this room (sid)" %><br>
 			<%= f.text_field :user_sid %>
 		<% else %>
-			<%= f.hidden_field :user_sid, :username %>
+			<%= f.hidden_field :user_sid, current_user.sid %>
 		<% end %>
 	</div>
 
@@ -37,5 +37,8 @@
 
 	<div class="actions">
 		<%= f.submit nil, class: "submit_format" %>
+		<%= link_to rooms_path do %>
+		  <button>Back</button>
+		<% end %>
 	</div>
 <% end %>
