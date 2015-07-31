@@ -91,36 +91,6 @@ button:active {
     background-color: #6e6;
 }
 
-input button {
-  background-color: #BBB;
-  border: thin solid #000;
-  margin-left: 0px;
-  position:absolute;
-  left: -137px;
-  -moz-opacity:0;
-  opacity: 0;
-  margin-right: 0px;
-  color: #000 !important;
-  font-weight: bold;
-  text-decoration: none;
-  z-index:2;
-}
-
-.pseudobutton {
-  z-index: 1;
-  position: relative;
-  left: 80px;
-  background-color: #BBB;
-  border: thin solid #000;
-  margin-left: 0px;
-  margin-right: 0px;
-  color: #000 !important;
-  font-weight: bold;
-  text-decoration: none;
-  width: 75px;
-  height: 26px;
-}
-
 #logo {
     width: 256px;
     height: 256px;

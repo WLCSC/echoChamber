@@ -3,7 +3,6 @@
 
 	<%= form_for(Sound.new) do |f| %>
 		<div class="field">
-			<button class="pseudobutton">Browse</button>
 			<%= f.file_field :data %>
 		</div>
 		<%= f.hidden_field :room_id, value: @room.id %>
