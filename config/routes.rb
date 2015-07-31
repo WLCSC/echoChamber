@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 	post "session/create", as: :login
 	get "session/destroy", as: :logout
 
-	resources :rooms
+	resources :rooms do
+		post "password", on: :member
+	end
 	resources :sounds
 
 	# The priority is based upon order of creation: first created -> highest priority.

@@ -1,3 +1,7 @@
-<h1><%= @room.name %></h1>
-
-<p><%= @room.comment %></p>
+<div id="student">
+	<p>Password</p>
+	<%= form_tag(password_room_path(@room), remote: true) do %>
+		<%= text_field_tag :password, nil, placeholder: "Enter room password..." %>
+		<%= submit_tag "Go" %>
+	<% end %>
+</div>
