@@ -20,6 +20,14 @@
 			<%= f.label "Select Sound" %><br>
 			<%= f.collection_select(:last_sound_id, @sounds, :id, :data_file_name) %>
 		</div>
+		<div>
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+		</div>
+		<div>
+			<%= f.label :comment %>
+			<%= f.text_area :comment %>
+		</div>
 		<br>
 		<%= f.submit nil, class: "submit_format"%>
 	<% end %>
