@@ -7,14 +7,6 @@
 		<%= csrf_meta_tags %>
 	</head>
 	<body>
-		<% flash.each do |level, value| %>
-    	<% if value.present? %>
-    	<div class="flash <%= h level %>">
-      	<%= h value %>
-       	<% flash[level] = nil %>
-			</div>
-			<% end %>
-		<% end %>
 		<div class="log_in_header">
 			<% if current_user %>
 				You are logged in as <i><%= current_user.nice_name %></i>.
