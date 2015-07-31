@@ -17,6 +17,14 @@
 
 <div class="buttonbox">
 	<h4>Sound file list</h4>
+	<%= form_for @room do |f| %>
+		<div>
+			<%= f.label "Select Sound" %><br>
+			<%= f.collection_select(:last_sound_id, @sounds, :id, :data_file_name) %>
+		</div>
+		<br>
+		<%= f.submit nil, class: "submit_format"%>
+	<% end %>
 </div>
 <br>
 <%= link_to 'Destroy Room', @room, method: :delete, data: { confirm: 'Are you sure?' }, class:"submit_format"  %>
