@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-	before_action :set_room, only: [:show, :edit, :update, :destroy]
+	before_action :set_room, only: [:show, :edit, :update, :destroy, :password]
 
 	# GET /rooms
 	# GET /rooms.json
@@ -60,6 +60,11 @@ class RoomsController < ApplicationController
 			format.html { redirect_to rooms_url, notice: 'Room was successfully destroyed.' }
 			format.json { head :no_content }
 		end
+	end
+
+	# POST /rooms/1/password
+	def password
+		@password = params[:password].strip
 	end
 
 	private
