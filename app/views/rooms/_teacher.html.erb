@@ -34,4 +34,10 @@
 	<% end %>
 </div>
 
+<div class="buttonbox">
+	<h4>Play sounds</h4>
+
+	Currently playing <%= @room.last_sound ? @room.last_sound.data_file_name : "nothing" %>.
+</div>
+
 <p><%= link_to "Destroy Room", @room, method: :delete, data: { confirm: "Are you sure?" }, class: "submit_format" %></p>
