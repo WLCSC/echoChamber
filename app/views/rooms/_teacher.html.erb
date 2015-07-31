@@ -14,10 +14,11 @@
 </div>
 
 <div class="buttonbox">
-	<h4>Sound file list</h4>
+	<h4>Edit room settings</h4>
+
 	<%= form_for @room do |f| %>
 		<div>
-			<%= f.label "Select Sound" %><br>
+			<%= f.label :last_sound_id, "Select sound" %>
 			<%= f.collection_select(:last_sound_id, @sounds, :id, :data_file_name, {selected: @room.last_sound_id}) %>
 		</div>
 		<div>
@@ -25,12 +26,12 @@
 			<%= f.text_field :name %>
 		</div>
 		<div>
-			<%= f.label :comment %>
+			<%= f.label :comment, "Other information" %>
 			<%= f.text_area :comment %>
 		</div>
-		<br>
-		<%= f.submit nil, class: "submit_format"%>
+
+		<p><%= f.submit nil, class: "submit_format"%></p>
 	<% end %>
 </div>
-<br>
-<%= link_to 'Destroy Room', @room, method: :delete, data: { confirm: 'Are you sure?' }, class:"submit_format"  %>
+
+<p><%= link_to "Destroy Room", @room, method: :delete, data: { confirm: "Are you sure?" }, class: "submit_format" %></p>
