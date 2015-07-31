@@ -65,6 +65,7 @@ class RoomsController < ApplicationController
 	# POST /rooms/1/password
 	def password
 		@password = params[:password].strip
+		respond_to :js
 	end
 
 	private
