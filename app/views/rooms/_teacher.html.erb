@@ -18,7 +18,15 @@
 	<%= form_for @room do |f| %>
 		<div>
 			<%= f.label "Select Sound" %><br>
-			<%= f.collection_select(:last_sound_id, @sounds, :id, :data_file_name) %>
+			<%= f.collection_select(:last_sound_id, @sounds, :id, :data_file_name, {selected: @room.last_sound_id}) %>
+		</div>
+		<div>
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+		</div>
+		<div>
+			<%= f.label :comment %>
+			<%= f.text_area :comment %>
 		</div>
 		<br>
 		<%= f.submit nil, class: "submit_format"%>

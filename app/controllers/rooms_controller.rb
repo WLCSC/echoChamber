@@ -76,6 +76,6 @@ class RoomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def room_params
-		params.require(:room).permit(:password, :comment, :user_sid, :name)
+		params.require(:room).permit(:password, :comment, :user_sid, :name, :last_sound_id)
     end
 end
