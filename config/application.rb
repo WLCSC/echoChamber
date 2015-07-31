@@ -24,6 +24,9 @@ module EchoChamber
 		config.active_record.raise_in_transactional_callbacks = true
 
 		config.middleware.delete Rack::Lock
-		config.middleware.use FayeRails::Middleware, mount: "/faye", timeout: 25
+		config.middleware.use FayeRails::Middleware, mount: "/faye", timeout: 25 do
+			map "/echochamber/**" => JukeboxController
+			map default: :block
+		end
 	end
 end
