@@ -55,7 +55,7 @@
 	<p><button onclick="play('<%= image_path "logo-on" %>', '<%= @room.id %>')">Play</button><button onclick="pause('<%= image_path "logo-off" %>', '<%= @room.id %>')">Pause</button></p>
 
 	<% if @sounds.count != 0 && @room.last_sound != nil %>
-			<%= link_to "Delete Audio File", @room.last_sound, method: :delete, data: { confirm: "Are you sure?" }, class: "submit_format" %>
+		<%= link_to "Delete Audio File", @room.last_sound, method: :delete, data: { confirm: "Are you sure?" }, class: "submit_format" %>
 	<% end %>
 
 	<% if @room.last_sound %>
