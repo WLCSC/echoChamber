@@ -45,6 +45,12 @@
 			<%= link_to "Destroy " + (@room.last_sound.data_file_name), @room.last_sound, method: :delete, data: { confirm: "Are you sure?" }, class: "submit_format" %>
 		<% end %>
 	<% end %>
+
+	<% if @room.last_sound %>
+		<%= audio_tag @room.last_sound.data.url, id: "jukebox" %>
+	<% else %>
+		<audio id="jukebox"></audio>
+	<% end %>
 </div>
 
 <p><%= link_to "Destroy Room", @room, method: :delete, data: { confirm: "Are you sure?" }, class: "submit_format" %></p>
