@@ -28,10 +28,8 @@ body {
 }
 
 #logo {
-    width: 256px;
-    height: 256px;
-    margin: auto;
-    margin-top: 40px;
+    width: 150px;
+    height: 150px;
 }
 
 #spinner {

@@ -28,20 +28,20 @@ label {
 }
 
 .submit_format {
-  background-color: #BBB;
-  border: thin solid #000;
-  padding: 4px 16px;
-  margin-left: 0px;
-  margin-right: 0px;
-  color: #000 !important;
-  font-weight: bold;
-  text-decoration: none;
-  font-family: "Open Sans",sans-serif;
-  font-size: 13px;
+	background-color: #BBB;
+	border: thin solid #000;
+	padding: 4px 16px;
+	margin-left: 0px;
+	margin-right: 0px;
+	color: #000 !important;
+	font-weight: bold;
+	text-decoration: none;
+	font-family: "Open Sans",sans-serif;
+	font-size: 13px;
 }
 
 .submit_format:hover {
-  background-color: #8f8;
+	background-color: #8f8;
 }
 
 .buttonbox {
@@ -64,16 +64,16 @@ label {
 }
 
 .lighter_button {
-  background-color: #FFFFFF;
+	background-color: #FFFFFF;
 }
 
 .field_with_errors {
-  margin: auto;
+	margin: auto;
 }
 
 #error_explanation {
-  margin: auto;
-  color: black;
+	margin: auto;
+	color: black;
 }
 
 button {
@@ -95,12 +95,14 @@ button:active {
 }
 
 #logo {
-    width: 256px;
-    height: 256px;
-    margin: auto;
-	margin-top: 40px;
+    width: 150px;
+    height: 150px;
 }
 
 textarea {
 	width: 40%;
+}
+
+#jukebox {
+	visibility: hidden;
 }
