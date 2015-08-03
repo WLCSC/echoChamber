@@ -46,10 +46,18 @@
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-	<link rel="stylesheet" href="app/assets/stylesheets/rooms.scss">
 	<script>
 	$(function() {
-		$( "#slider" ).slider();
+		$("#slider").slider({
+			min: 0,
+			max: document.getElementById("jukebox").duration,
+			range: "min",
+			change: function () {
+				var value = $("#slider").slider("value");
+				document.getElementById("jukebox").fastSeek(value);
+				teacherClient.publish("/echochamber/<%= @room.id %>", { seek: value });
+			}
+		});
 	});
 	</script>
 	<div id="slider"></div>
