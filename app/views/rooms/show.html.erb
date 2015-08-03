@@ -1,7 +1,7 @@
 <%= link_to root_path do %>
 	<%= image_tag "logo", id: "logo" %>
 <% end %>
-<h1>Room <%= @room.name %></h1>
+<h1 id="roomname">Room <%= @room.name %></h1>
 
 <% if current_teacher || current_admin %>
 	<%= render "teacher" %>

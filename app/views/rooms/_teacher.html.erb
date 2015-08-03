@@ -16,7 +16,7 @@
 <div class="buttonbox">
 	<h4>Edit room settings</h4>
 
-	<%= form_for @room do |f| %>
+	<%= form_for(@room, remote: true) do |f| %>
 		<div>
 			<%= f.label :last_sound_id, "Select sound" %>
 			<%= f.collection_select(:last_sound_id, @sounds, :id, :data_file_name, { selected: @room.last_sound_id }) %>
@@ -39,11 +39,11 @@
 <div class="buttonbox">
 	<h4>Play sounds</h4>
 
-	<p>Currently playing <%= @room.last_sound ? @room.last_sound.data_file_name : "nothing" %>.</p>
+	<p id="playingnotice">Currently playing <%= @room.last_sound ? @room.last_sound.data_file_name : "nothing" %>.</p>
 
 	<% if @sounds.count != 0 && @room.last_sound != nil %>
 		<%= link_to @room do %>
-			<%= link_to "Destroy " + (@room.last_sound.data_file_name), @room.last_sound, method: :delete, data: { confirm: "Are you sure?" }, class: "submit_format" %>
+			<%= link_to "Delete Audio File", @room.last_sound, method: :delete, data: { confirm: "Are you sure?" }, class: "submit_format" %>
 		<% end %>
 	<% end %>
 

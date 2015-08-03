@@ -1,0 +1,3 @@
+$("#roomname").html("Room <%= @room.name %>");
+$("#playingnotice").html("Currently playing <%= @room.last_sound.data_file_name %>.");
+$("#jukebox").attr("src", "<%= @room.last_sound.data.url %>");
