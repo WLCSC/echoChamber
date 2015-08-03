@@ -39,7 +39,7 @@
 	<h4>Play sounds</h4>
 
 	<p id="playingnotice">Currently playing <%= @room.last_sound ? @room.last_sound.data_file_name : "nothing" %>.</p>
-	<button>Play/Pause</button><button>Stop</button>
+	<p><button>Play/Pause</button><button>Stop</button></p>
 
 	<% if @sounds.count != 0 && @room.last_sound != nil %>
 		<%= link_to @room do %>
