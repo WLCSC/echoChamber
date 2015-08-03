@@ -40,15 +40,13 @@
 <div class="buttonbox">
 	<h4>Play sounds</h4>
 
-	<p id="playingnotice">Currently playing <%= @room.last_sound ? @room.last_sound.data_file_name : "nothing" %>.</p>
+	<p id="playingnotice">
+		Currently playing <%= @room.last_sound ? @room.last_sound.data_file_name : "nothing.  Upload and select a sound file to be able to do anything!" %>.
+	</p>
 
 	<p><button onclick="play('<%= image_path "logo-on" %>', '<%= @room.id %>')">Play</button><button onclick="pause('<%= image_path "logo-off" %>', '<%= @room.id %>')">Pause</button></p>
 
 	<div id="slider"></div>
-
-	<% if @sounds.count != 0 && @room.last_sound != nil %>
-		<%= link_to "Delete Audio File", @room.last_sound, method: :delete, data: { confirm: "Are you sure?" }, class: "submit_format" %>
-	<% end %>
 
 	<% if @room.last_sound %>
 		<%= audio_tag @room.last_sound.data.url, id: "jukebox" %>
