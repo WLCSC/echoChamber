@@ -1,5 +1,5 @@
-<%= link_to root_path do %>
-	<%= image_tag "logo", id: "logo" %>
+<%= link_to root_path, data: { no_turbolink: true } do %>
+	<%= image_tag "logo-off", id: "logo" %>
 <% end %>
 <h1 id="roomname">Room <%= @room.name %></h1>
 
