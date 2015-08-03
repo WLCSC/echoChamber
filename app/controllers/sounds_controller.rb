@@ -54,9 +54,10 @@ class SoundsController < ApplicationController
 	# DELETE /sounds/1
 	# DELETE /sounds/1.json
 	def destroy
+		@room = @sound.room
 		@sound.destroy
 		respond_to do |format|
-			format.html { redirect_to sounds_url, notice: "Sound was successfully destroyed." }
+			format.html { redirect_to @room, notice: "Sound was successfully destroyed." }
 			format.json { head :no_content }
 		end
 	end

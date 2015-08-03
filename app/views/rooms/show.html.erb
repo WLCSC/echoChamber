@@ -1,5 +1,6 @@
-<%= image_tag "logo", size: "150x150" %>
-
+<%= link_to root_path do %>
+	<%= image_tag "logo", size: "150x150" %>
+<% end %>
 <h1>Room <%= @room.name %></h1>
 
 <% if current_teacher || current_admin %>
