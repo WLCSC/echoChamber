@@ -12,7 +12,6 @@
 		</div>
 	<% end %>
 </div>
-
 <div class="buttonbox">
 	<h4>Edit room settings</h4>
 
@@ -40,6 +39,7 @@
 	Currently playing <%= @room.last_sound ? @room.last_sound.data_file_name : "nothing" %>.
 	<br>
 	<br>
+	<button>Play/Pause</button><button>Stop</button>
 	<% if @sounds.count != 0 && @room.last_sound != nil %>
 		<%= link_to @room do %>
 			<%= link_to "Destroy " + (@room.last_sound.data_file_name), @room.last_sound, method: :delete, data: { confirm: "Are you sure?" }, class: "submit_format" %>
