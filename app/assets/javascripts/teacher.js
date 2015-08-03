@@ -17,8 +17,8 @@ setUpSlider = function (room_id) {
 		min: 0,
 		//max: document.getElementById("jukebox").duration,
 		range: "min",
-		change: function () {
-			var value = $("#slider").slider("value");
+		slide: function (e, ui) {
+			var value = ui.value;
 			document.getElementById("jukebox").fastSeek(value);
 			teacherClient.publish("/echochamber/" + room_id, { seek: value });
 		}
