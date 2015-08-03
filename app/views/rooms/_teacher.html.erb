@@ -22,7 +22,7 @@
 			<%= f.collection_select(:last_sound_id, @sounds, :id, :data_file_name, {selected: @room.last_sound_id}) %>
 		</div>
 		<div>
-			<%= f.label :name %>
+			<%= f.label :name, "Room name" %>
 			<%= f.text_field :name %>
 		</div>
 		<div>
@@ -37,9 +37,8 @@
 <div class="buttonbox">
 	<h4>Play sounds</h4>
 
-	Currently playing <%= @room.last_sound ? @room.last_sound.data_file_name : "nothing" %>.
-	<br>
-	<br>
+	<p>Currently playing <%= @room.last_sound ? @room.last_sound.data_file_name : "nothing" %>.</p>
+
 	<% if @sounds.count != 0 && @room.last_sound != nil %>
 		<%= link_to @room do %>
 			<%= link_to "Destroy " + (@room.last_sound.data_file_name), @room.last_sound, method: :delete, data: { confirm: "Are you sure?" }, class: "submit_format" %>
