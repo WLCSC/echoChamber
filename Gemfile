@@ -54,3 +54,5 @@ gem "net-ldap"
 
 # Faye needs thin in order to actually work.
 gem "thin", "~> 1.6"
+
+gem "jquery-ui-rails"

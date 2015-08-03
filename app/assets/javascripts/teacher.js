@@ -11,3 +11,16 @@ pause = function (path, room_id) {
 	$("#logo").attr("src", path);
 	teacherClient.publish("/echochamber/" + room_id, { pause: true });
 };
+
+setUpSlider = function (room_id) {
+	$("#slider").slider({
+		min: 0,
+		//max: document.getElementById("jukebox").duration,
+		range: "min",
+		change: function () {
+			var value = $("#slider").slider("value");
+			document.getElementById("jukebox").fastSeek(value);
+			teacherClient.publish("/echochamber/" + room_id, { seek: value });
+		}
+	});
+};

@@ -43,23 +43,7 @@
 	<p id="playingnotice">Currently playing <%= @room.last_sound ? @room.last_sound.data_file_name : "nothing" %>.</p>
 
 	<p><button onclick="play('<%= image_path "logo-on" %>', '<%= @room.id %>')">Play</button><button onclick="pause('<%= image_path "logo-off" %>', '<%= @room.id %>')">Pause</button></p>
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-	<script>
-	$(function() {
-		$("#slider").slider({
-			min: 0,
-			max: document.getElementById("jukebox").duration,
-			range: "min",
-			change: function () {
-				var value = $("#slider").slider("value");
-				document.getElementById("jukebox").fastSeek(value);
-				teacherClient.publish("/echochamber/<%= @room.id %>", { seek: value });
-			}
-		});
-	});
-	</script>
+
 	<div id="slider"></div>
 
 	<% if @sounds.count != 0 && @room.last_sound != nil %>
@@ -71,6 +55,9 @@
 	<% else %>
 		<audio id="jukebox"></audio>
 	<% end %>
+
+	<%# Sadly this has to be here. :( %>
+    <script>setUpSlider("<%= @room.id %>");</script>
 </div>
 
 <p><%= link_to "Destroy Room", @room, method: :delete, data: { confirm: "Are you sure?" }, class: "submit_format" %></p>
