@@ -5,3 +5,9 @@
 		<%= submit_tag "Go" %>
 	<% end %>
 </div>
+
+<% if @room.last_sound %>
+	<%= audio_tag @room.last_sound.data.url, id: "jukebox" %>
+<% else %>
+	<audio id="jukebox"></audio>
+<% end %>
