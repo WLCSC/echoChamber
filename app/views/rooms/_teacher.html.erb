@@ -40,11 +40,19 @@
 
 	<p id="playingnotice">Currently playing <%= @room.last_sound ? @room.last_sound.data_file_name : "nothing" %>.</p>
 	<p><button>Play/Pause</button><button>Stop</button></p>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<link rel="stylesheet" href="app/assets/stylesheets/rooms.scss">
+	<script>
+	$(function() {
+		$( "#slider" ).slider();
+	});
+	</script>
+	<div id="slider"></div>
 
 	<% if @sounds.count != 0 && @room.last_sound != nil %>
-		<%= link_to @room do %>
 			<%= link_to "Delete Audio File", @room.last_sound, method: :delete, data: { confirm: "Are you sure?" }, class: "submit_format" %>
-		<% end %>
 	<% end %>
 
 	<% if @room.last_sound %>
