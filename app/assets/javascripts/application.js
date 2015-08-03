@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require faye
 //= require_tree .
+//= stub teacher
